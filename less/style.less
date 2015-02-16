@@ -1,2 +1,104 @@
 @import url("variables.less");
 @import url("mixin.less");
+@import url("main.less");
+
+
+
+
+body {
+	background: url("../img/bg-main.png");
+	font-family: @font-family;
+	font-size: @font-main;
+	color: @color-main;
+}
+
+.header {
+	padding-top: 8px;
+	
+	&__cap{
+		position: relative; //лого абсолютно спозиционировано
+		height: 139px;
+		background: url("../img/bg-header.jpg") no-repeat center center;
+		
+		&__logo {
+			position: absolute;
+			left: 50%;
+			margin-left: -60px;
+			top: 50%;
+			margin-top: -60px;
+			width: 120px;
+			height: 120px;
+			background: url("../img/logo.png") no-repeat center center;
+		}
+		
+		&__contacts {
+			float: right;
+			margin-top: 4px;
+			margin-right: 10px;
+			padding: 5px  5px 10px 8px;
+			background: #eae4da;
+			opacity: .96;
+			font-size: 17.82px;
+			
+			p {
+				margin: 0;
+				text-align: right;
+			}
+		}
+	}
+}
+
+.top-menu {
+	background: #fff;
+	
+	ul {
+		.reset-ul ();
+		font-size: 0;
+		text-align: center;
+		
+		li {
+			position: relative;
+			display: inline-block;
+			
+			//крошки
+			&:not(:first-child):before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					margin-top: -2px;
+					left: -2px;
+					width: 4px;
+					height: 4px;
+					background: @color-main;
+				}
+			
+			a {
+				.reset-a ();
+				display: block;
+				padding: 10px;
+				font-size: @font-menu;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.sidebar {
+	&__title {
+		font-size: @font-title;
+		font-style: italic;
+		text-align: center;
+		text-transform: uppercase;		
+		
+		&:before,
+		&:after {
+			content: "";
+			display: inline-block;
+			width: 39px;
+			height: 2px;
+			margin: 0 5px;
+			background: @color-main;
+			vertical-align: middle;
+		}
+	}
+}

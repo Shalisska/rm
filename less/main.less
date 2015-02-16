@@ -1,0 +1,41 @@
+body {
+	margin: 0;
+	padding: 0;	
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+//центровщик
+.layout-center-wrapper {
+	width: 760px;
+	margin: 0 auto;
+}
+
+//левое меню
+.sidebar {
+	float: left;
+	width: (760px - 400px) / 2;
+}
+
+//осн содержание
+.main {
+	float: left;
+	width: 400px;
+}
+
+//правая часть
+.show-room {
+	float: right;
+	width: (760px - 400px) / 2;
+}
+
+.footer {
+	&__column {
+		float: left;
+		width: 100% / 3;
+	}
+}
