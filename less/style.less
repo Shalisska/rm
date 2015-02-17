@@ -83,22 +83,224 @@ body {
 	}
 }
 
+//боковое меню
 .sidebar {
 	&__title {
-		font-size: @font-title;
-		font-style: italic;
-		text-align: center;
-		text-transform: uppercase;		
+		.title-general (@elem-width: 39px;);
+	}
+	
+	ul {
+		.reset-ul ();
+	}
+	
+	&__item {
+		margin-bottom: 34px;
 		
-		&:before,
-		&:after {
-			content: "";
-			display: inline-block;
-			width: 39px;
-			height: 2px;
-			margin: 0 5px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		a {
+			.reset-a ();
+			display: block;
+			text-align: center;
+			
+			p {
+				margin: 0;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.main {
+	.info {
+		margin-bottom: 20px;
+		
+		&__title {
+			.title-general ();
+		}
+		
+		//обертка блока со скроллом
+		.layout-info {
+			height: 170px;
+			padding-right: 5px;
+			overflow: auto;
+		}
+
+		&__item {
+			font-size: @font-content;
+			font-style: italic;
+			text-align: justify;
+
+			p {
+				margin: 0;
+			}
+		}
+	}	
+}
+
+.feedback {
+	position: relative; //кнопка "написать" в абсолюте
+	padding: 15px 10px 22px 5px;
+	background: #f8f6f2;
+	background: rgba(255, 255, 255, .65);
+	
+	&__title {
+		.title-general (@font-feedback; @elem-width: 86px);
+		margin: 0;
+		margin-bottom: 5px;
+	}
+	
+	&__items {
+		
+	}
+	
+	&__item {
+		&__author {
+			float: left;
+			color: @color-second;
+		}
+		
+		&__rating {
+			float: right;
+			width: 30px;
+			height: 10px;
+			background: #145700;
+		}
+		
+		//цитаты
+		&__text {
+			clear: both; //убираем наезжание от флоатов у автора и рейтинга
+			margin: 0 0 20px;;
+			height: 80px;
+			overflow: hidden;
+			font-style: italic;
+		}
+	}
+	
+	//скроллинг
+	&__control--up,
+	&__control--down{
+		display: block;
+		width: 22px;
+		height: 11px;
+		margin: 0 auto;
+		padding: 0;
+		background: transparent;
+		border: 11px solid transparent;		
+	}
+	
+	&__control--up {
+		border-top: none;
+		border-bottom: 11px solid @color-main;
+	}
+	
+	&__control--down {
+		border-top: 11px solid @color-main;
+		border-bottom: none;
+	}
+	
+	//кнопка - написать
+	&__write {
+		.reset-a ();
+		.btn (@font-write);
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		width: 125px;
+		color: @color-second;
+		border: 1px solid @color-second;
+	}
+}
+
+//праая сторона
+.show-room {
+	padding-top: 25px;
+	width: 165px;
+	
+	//верхние кнопки
+	&__request,
+	&__callback {
+		.reset-a ();
+		.btn ();
+		margin-bottom: 12px;
+		color: @color-btn;
+		letter-spacing: -.65px;
+		word-spacing: -1px;
+	}
+	
+	&__request {
+		background: @color-second;
+	}
+	
+	&__callback {
+		background: @color-btn_second;
+	}
+	
+	//новинки
+	&__new {
+		width: 160px;
+		margin: 0 auto 10px;
+		padding-top: 85px;
+		padding-bottom: 30px;
+		background: url("../img/img-right.jpg") no-repeat center center;
+		background-size: 100% auto;
+		
+		&-text {
+			margin-bottom: 10px;
+			padding: 15px 0 20px;
 			background: @color-main;
-			vertical-align: middle;
+			opacity: .76;
+			text-align: center;
+			font-family: @font-family--new;
+			font-size: 24px;
+			color: @color-btn;
+		}
+		
+		&-box {
+			padding: 12px 5px 10px;
+			background: rgba(255, 255, 255, .46);
+		}
+		
+		//ссылки на галерею и заказ
+		&--gallery,
+		&--order {
+			display: block;
+			color: @color-main;
+			text-transform: uppercase;
+			font-size: 15.32px;
+			letter-spacing: -.65px;
+		}
+		
+		&--gallery {
+			.reset-a ();
+			margin-bottom: 8px;
+		}
+	}
+	
+	//ссылка на галерею
+	&__gallery {
+		.reset-a ();
+		box-sizing: border-box;
+		display: block;
+		width: 160px;
+		height: 142px;
+		padding-top: 105px;
+		margin: 0 auto;
+		background: url("../img/icon-photo.png") no-repeat center 20px,
+							url("../img/img-gallery.jpg") no-repeat center center;
+		background-size: auto,
+									100% auto;
+		
+		&--text {
+			padding: 4px 0;
+			margin: 0 auto;
+			background: @color-main;
+			text-align: center;
+			text-transform: uppercase;
+			color: @color-light;
 		}
 	}
 }
