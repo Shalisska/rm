@@ -304,3 +304,84 @@ body {
 		}
 	}
 }
+
+.footer {
+	margin-bottom: 200px;
+	background: url("../img/bg-footer.jpg") no-repeat center top;
+	color: @color-footer;
+	
+	&__column {
+		box-sizing: border-box;
+		padding: 3px 30px;
+		
+		&--right {
+			padding-right: 0;
+		}
+	}
+	
+	&__menu {
+		margin-bottom: 8px;
+		
+		ul {
+			.reset-ul ();
+			
+			li {
+				a {
+					.reset-a ();
+					font-size: @font-footer-menu;
+					text-transform: lowercase;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+	
+	&__signature {
+		margin: 0;
+		font-size: @font-menu;
+		text-transform: uppercase;
+		line-height: 20px;
+	}
+	
+	&__request,
+	&__callback {
+		.reset-a ();
+		.btn ();
+		width: 165px;
+		margin: 0 auto;
+		background: @color-main;
+		letter-spacing: -.65px;
+		border: 1px solid @color-footer;
+	}
+	
+	&__request {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	
+	&__contacts {
+		margin-bottom: 20px;
+		padding-top: 5px;
+		font-size: 17.82px;
+		text-align: right;
+		
+		p {
+			margin: 0;
+		}
+	}
+	
+	&__copyright {
+		text-align: right;
+		font-size: 11px;
+		line-height: 16px;
+		color: #cecece;
+		
+		a {
+			display: inline-block;
+			width: 93px;
+			height: 16px;
+			background: url("../img/logo-artbrother.png") no-repeat center center;
+			vertical-align: middle;
+		}
+	}
+}

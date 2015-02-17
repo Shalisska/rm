@@ -322,3 +322,78 @@ body {
   text-transform: uppercase;
   color: #f9f7f3;
 }
+.footer {
+  margin-bottom: 200px;
+  background: url("../img/bg-footer.jpg") no-repeat center top;
+  color: #f7f5f0;
+}
+.footer__column {
+  box-sizing: border-box;
+  padding: 3px 30px;
+}
+.footer__column--right {
+  padding-right: 0;
+}
+.footer__menu {
+  margin-bottom: 8px;
+}
+.footer__menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer__menu ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+  text-transform: lowercase;
+  line-height: 20px;
+}
+.footer__signature {
+  margin: 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+.footer__request,
+.footer__callback {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 5px 0;
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 165px;
+  margin: 0 auto;
+  background: #382013;
+  letter-spacing: -0.65px;
+  border: 1px solid #f7f5f0;
+}
+.footer__request {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.footer__contacts {
+  margin-bottom: 20px;
+  padding-top: 5px;
+  font-size: 17.82px;
+  text-align: right;
+}
+.footer__contacts p {
+  margin: 0;
+}
+.footer__copyright {
+  text-align: right;
+  font-size: 11px;
+  line-height: 16px;
+  color: #cecece;
+}
+.footer__copyright a {
+  display: inline-block;
+  width: 93px;
+  height: 16px;
+  background: url("../img/logo-artbrother.png") no-repeat center center;
+  vertical-align: middle;
+}
