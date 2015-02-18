@@ -9,6 +9,10 @@ body {
 	clear: both;
 }
 
+.popup-show {
+	display: block;
+}
+
 //центровщик
 .layout-center-wrapper {
 	width: 760px;
@@ -18,19 +22,23 @@ body {
 //левое меню
 .sidebar {
 	float: left;
-	width: (760px - 400px) / 2;
+	width: 180px;
 }
 
 //осн содержание
 .main {
 	float: left;
-	width: 400px;
+	width: (760px - 180px);
+	
+	&__index-page {
+		width: (760px - 180px * 2);
+	}	
 }
 
 //правая часть
 .show-room {
 	float: right;
-	width: (760px - 400px) / 2;
+	width: 180px;
 }
 
 .footer {

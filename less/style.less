@@ -1,6 +1,7 @@
 @import url("variables.less");
 @import url("mixin.less");
 @import url("main.less");
+@import url("form.less");
 
 
 
@@ -14,6 +15,7 @@ body {
 
 .header {
 	padding-top: 8px;
+	margin-bottom: 10px;
 	
 	&__cap{
 		position: relative; //лого абсолютно спозиционировано
@@ -83,10 +85,17 @@ body {
 	}
 }
 
+.main-content {
+	margin-bottom: 55px;	
+}
+
 //боковое меню
 .sidebar {
+	
 	&__title {
 		.title-general (@elem-width: 39px;);
+		margin-top: 27px;
+		margin-bottom: 30px;
 	}
 	
 	ul {
@@ -94,7 +103,7 @@ body {
 	}
 	
 	&__item {
-		margin-bottom: 34px;
+		margin-bottom: 31px;
 		
 		&:last-child {
 			margin-bottom: 0;
@@ -116,10 +125,12 @@ body {
 
 .main {
 	.info {
-		margin-bottom: 20px;
+		margin-top: 27px;
+		margin-bottom: 15px;
 		
 		&__title {
 			.title-general ();
+			margin-bottom: 25px;
 		}
 		
 		//обертка блока со скроллом
@@ -143,7 +154,7 @@ body {
 
 .feedback {
 	position: relative; //кнопка "написать" в абсолюте
-	padding: 15px 10px 22px 5px;
+	padding: 15px 10px 20px 5px;
 	background: #f8f6f2;
 	background: rgba(255, 255, 255, .65);
 	
@@ -160,20 +171,31 @@ body {
 	&__item {
 		&__author {
 			float: left;
+			margin-bottom: 1px;
 			color: @color-second;
 		}
 		
 		&__rating {
 			float: right;
-			width: 30px;
-			height: 10px;
-			background: #145700;
+			font-size: 0;
+			
+			&-point {
+				display: inline-block;
+				margin-left: 2px;
+				width: 14px;
+				height: 13px;
+				background: url("../img/icon-star.png") no-repeat center center;
+				
+				&--on {
+					background: url("../img/icon-star--on.png") no-repeat center center;
+				}
+			}
 		}
 		
 		//цитаты
 		&__text {
 			clear: both; //убираем наезжание от флоатов у автора и рейтинга
-			margin: 0 0 20px;;
+			margin: 0 0 20px;
 			height: 80px;
 			overflow: hidden;
 			font-style: italic;
@@ -181,25 +203,12 @@ body {
 	}
 	
 	//скроллинг
-	&__control--up,
-	&__control--down{
-		display: block;
-		width: 22px;
-		height: 11px;
-		margin: 0 auto;
-		padding: 0;
-		background: transparent;
-		border: 11px solid transparent;		
-	}
-	
 	&__control--up {
-		border-top: none;
-		border-bottom: 11px solid @color-main;
+		.control--up ();
 	}
 	
 	&__control--down {
-		border-top: 11px solid @color-main;
-		border-bottom: none;
+		.control--down ();
 	}
 	
 	//кнопка - написать
@@ -225,24 +234,25 @@ body {
 	&__callback {
 		.reset-a ();
 		.btn ();
-		margin-bottom: 12px;
 		color: @color-btn;
 		letter-spacing: -.65px;
 		word-spacing: -1px;
 	}
 	
-	&__request {
+	&__request {		
+		margin-bottom: 8px;
 		background: @color-second;
 	}
 	
 	&__callback {
+		margin-bottom: 24px;
 		background: @color-btn_second;
 	}
 	
 	//новинки
 	&__new {
 		width: 160px;
-		margin: 0 auto 10px;
+		margin: 0 auto 13px;
 		padding-top: 85px;
 		padding-bottom: 30px;
 		background: url("../img/img-right.jpg") no-repeat center center;
@@ -306,13 +316,22 @@ body {
 }
 
 .footer {
-	margin-bottom: 200px;
+	position: relative;
 	background: url("../img/bg-footer.jpg") no-repeat center top;
 	color: @color-footer;
 	
+	&:before {
+		content: "";
+		position: absolute;
+		top: -7px;
+		width: 100%;
+		height: 4px;
+		background: @color-main;
+	}
+	
 	&__column {
 		box-sizing: border-box;
-		padding: 3px 30px;
+		padding: 3px 30px 7px;
 		
 		&--right {
 			padding-right: 0;
@@ -355,13 +374,13 @@ body {
 	}
 	
 	&__request {
-		margin-top: 20px;
+		margin-top: 15px;
 		margin-bottom: 10px;
 	}
 	
 	&__contacts {
-		margin-bottom: 20px;
 		padding-top: 5px;
+		margin-bottom: 25px;
 		font-size: 17.82px;
 		text-align: right;
 		
@@ -382,6 +401,101 @@ body {
 			height: 16px;
 			background: url("../img/logo-artbrother.png") no-repeat center center;
 			vertical-align: middle;
+		}
+	}
+}
+
+//галерея
+.main-content--gallery {
+	margin-bottom: 35px;
+}
+
+.gallery {
+	padding-top: 5px;
+	
+	//скроллинги
+	&__control--up {
+		.control--up ();
+		margin-bottom: 10px;
+	}
+	
+	&__control--down {
+		.control--down ();
+		margin-top: 8px;
+	}
+	
+	//контейнер с фото
+	.gallery__box {
+		margin: 0;
+
+		//фото
+		img {
+			float: left;
+			margin: 0 5px 6px 0;
+			width: 190px;
+			height: 135px;
+
+			//по 3 в ряду
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+		}	
+	}
+}
+
+//контакты
+.contacts {
+	margin: 25px auto;
+	
+	&__title {
+		.title-general (@size: 20px; @elem-width: 86px);
+		margin: 0 auto 10px;
+	}
+	
+	&__box {		
+		p {
+			margin: 0;
+			text-align: center;
+			font-style: italic;
+		}
+	}
+}
+
+//отзывы
+.feedback--review {
+	background: none;
+	
+	&__write {
+		position: static;
+		margin-bottom: 20px;		
+		background: rgba(255, 255, 255, .65);
+	}
+	
+	&__item {
+		margin-bottom: 30px;
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+//ремонт
+.renovate {
+	&__item {
+		&-title {
+			margin-bottom: 31px;
+			text-align: center;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			p {
+				margin: 0;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
 		}
 	}
 }

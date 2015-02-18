@@ -43,3 +43,25 @@
 	text-transform: uppercase;
 	border-radius: 5px;
 }
+
+.control () {
+	display: block;
+	width: 22px;
+	height: 11px;
+	margin: 0 auto;
+	padding: 0;
+	background: transparent;
+	border: 11px solid transparent;		
+}
+
+.control--up () {
+	.control ();
+	border-top: none;
+	border-bottom: 11px solid @color-main;
+}
+
+.control--down {
+	.control ();
+	border-top: 11px solid @color-main;
+	border-bottom: none;
+}
