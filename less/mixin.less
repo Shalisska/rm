@@ -9,7 +9,7 @@
 .reset-ul (@list-style: none; @li-padding: 0; @li-margin: 0) {
     list-style: @list-style;
     margin: @li-margin;
-    padding: @li-padding;    
+    padding: @li-padding;
 }
 
 .reset-a () {
@@ -18,50 +18,57 @@
 }
 
 .title-general (@size: @font-title; @elem-width: 96px; @elem-height: 2px) {
-	font-style: italic;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: @size;
-	
-	&:before,
-	&:after {
-		content: "";
-		display: inline-block;
-		width: @elem-width;
-		height: @elem-height;
-		margin: 0 5px;
-		background: @color-main;
-		vertical-align: middle;
-	}
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: @size;
+
+    &:before, &:after {
+        content: "";
+        display: inline-block;
+        width: @elem-width;
+        height: @elem-height;
+        margin: 0 5px;
+        background: @color-main;
+        vertical-align: middle;
+    }
+}
+
+.text-regular () {
+    font-style: italic;
+    text-align: justify;
+
+    p { margin: 0; }
 }
 
 .btn (@font: @font-btn) {
-	display: block;
-	padding: 5px 0;
-	font-size: @font;
-	text-align: center;
-	text-transform: uppercase;
-	border-radius: 5px;
+    display: block;
+    padding: 5px 0;
+    font-size: @font;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
 }
 
 .control () {
-	display: block;
-	width: 22px;
-	height: 11px;
-	margin: 0 auto;
-	padding: 0;
-	background: transparent;
-	border: 11px solid transparent;		
+    display: block;
+    width: 22px;
+    height: 11px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border: 11px solid transparent;
+	outline: none;
 }
 
 .control--up () {
-	.control ();
-	border-top: none;
-	border-bottom: 11px solid @color-main;
+    .control ();
+    border-top: none;
+    border-bottom: 11px solid @color-main;
 }
 
 .control--down {
-	.control ();
-	border-top: 11px solid @color-main;
-	border-bottom: none;
+    .control ();
+    border-top: 11px solid @color-main;
+    border-bottom: none;
 }

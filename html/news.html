@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Ремонт квартир</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link href="../css/normalize.css" rel="stylesheet">
+		<link href="../css/style.css" rel="stylesheet">        
+	</head>
+	
+	<body>
+		<div class="layout-main">
+			<header class="header">
+				<div class="header__cap  clearfix">
+					<div class="layout-center-wrapper">
+						<a href="index.html" class="header__cap__logo"></a><!--логотип-->
+						<div class="header__cap__contacts">
+							<p>Ремонт в Москве и МО</p>
+							<p>тел.: (495) 259 36 15</p>
+						</div>
+					</div><!--layout-center-wrapper-->
+				</div><!--header__cap-->
+				
+					
+				<nav class="top-menu">
+					<div class="layout-center-wrapper">
+						<ul>
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="gallery.html">Галерея</a></li>
+							<li><a href="contacts.html">Контакты</a></li>
+							<li><a href="review.html">Отзывы</a></li>
+							<li><a href="news.html">Новости</a></li>
+							<li><a href="price.html">Цены</a></li>
+							<li><a href="renovate.html">Ремонт</a></li>
+							<li><a href="venice.html">Венецианская штукатурка</a></li>
+						</ul>
+					</div><!--layout-center-wrapper-->
+				</nav>
+				
+			</header>
+				
+				
+				
+			<main class="layout-center-wrapper  clearfix  main-content">			
+							
+				<div class="main"><!--осн содержание страницы-->
+					
+				</div><!--main-->
+				
+				<aside class="show-room"><!--правый блок-->
+				
+					<!--кнопки-->
+					<a href="#" class="show-room__request">Заявка на ремонт</a>
+					<a href="#" class="show-room__callback">Обратный звонок</a>
+					
+					<!--новинки-->
+					<div class="show-room__new">
+						<p class="show-room__new-text">Венецианская штукатурка</p><!--новое-->
+						
+						
+						<div class="show-room__new-box"><!--ссылка на галерею и кнопка заказа-->
+							<a href="gallery.html" class="show-room__new--gallery">Посмотреть галерею</a>
+							<a href="#" class="show-room__new--order">Заказать</a>
+						</div><!--show-room__new-box-->
+					</div><!--show-room__new-->
+					
+					<a href="gallery.html" class="show-room__gallery">
+						<p class="show-room__gallery--text">Галерея</p>
+					</a>
+				</aside><!--show-room-->
+			</main><!--layout-center-wrapper  clearfix  main-part-->
+			
+			<footer class="footer  clearfix"><!--подвал-->
+			
+				<div class="layout-center-wrapper"><!--центровщик-->
+					<div class="footer__column  footer__column--left">
+						<nav class="footer__menu"><!--нижнее меню-->
+							<ul>
+								<li><a href="renovate.html#bath">Ремонт сан. узлов</a></li>
+								<li><a href="renovate.html#bed">Ремонт квартир</a></li>
+								<li><a href="renovate.html#office">Ремонт офисов</a></li>
+								<li><a href="renovate.html#house">Ремонт в домах</a></li>
+							</ul>
+						</nav><!--footer__menu-->
+						
+						<p class="footer__signature">ИП “ЯКОВЛЕВ” - 2015г.</p><!--подпись-->
+					</div><!--footer__column--left-->
+					
+					
+					<div class="footer__column  footer__column--center"><!--кнопки-->
+						<a href="#" class="footer__request">Заявка на ремонт</a>
+						<a href="#" class="footer__callback">Обратный звонок</a>
+					</div><!--footer__column--center-->
+					
+					
+					<div class="footer__column  footer__column--right">
+						<div class="footer__contacts"><!--контакты-->
+							<p>Ремонт в Москве и МО</p>
+							<p>тел.: (495) 259 36 15</p>
+						</div>
+						
+						<p class="footer__copyright">Дизайн сайта —<a href="#" class="footer__copyright--logo"></a></p><!--копирайт-->
+						
+					</div><!--footer__column--right-->
+				</div><!--layout-center-wrapper-->
+			</footer><!--footer-->
+		</div>
+			
+			<!--форма обратного звонка-->
+			<form class="form  form--callback" action="#" method="post">
+				<button class="form__esc"></button><!--выход-->
+				<p class="form__title">Обратный звонок</p><!--заголовок-->
+				
+				<label class="form__label"><!--ввод имени-->
+					Имя* <span class="form__label--hint">(как к вам обращаться)</span><!--лейбл-->
+					<input class="form__field" type="text" name="name" required>
+				</label><!--form__label-->
+				
+				<label class="form__label"><!--ввод телефона-->
+					Телефон* <span class="form__label--hint">(в формате 89268524596)</span><!--лейбл-->
+					<input class="form__field" type="tel" name="tel" required>
+				</label><!--form__label-->
+				
+				<input class="form__send" type="submit" value="Отправить"><!--отправка-->
+			</form><!--form-->
+			
+			<!--форма заявки-->
+			<form class="form  form--order_fixed" action="#" method="post">
+				<button class="form__esc"></button><!--выход-->
+				<p class="form__title">Заявка на ремонт</p>
+						
+				<label class="form__label"><!--ввод имени-->
+					Имя* <span class="form__label--hint">(как к вам обращаться)</span><!--лейбл-->
+					<input class="form__field" type="text" name="name" required>
+				</label><!--form__label-->
+				
+				<label class="form__label"><!--ввод телефона-->
+					Телефон* <span class="form__label--hint">(в формате 89268524596)</span><!--лейбл-->
+					<input class="form__field" type="tel" name="tel" required>
+				</label><!--form__label-->
+			
+				<label class="form__label"><!--ввод почты-->
+					E-mail<!--лейбл-->
+					<input class="form__field" type="email" name="email" required>
+				</label><!--form__label-->
+			
+				<label class="form__label"><!--описание ремонта-->
+					Тип ремонта<!--лейбл-->
+					<textarea class="form__field  form__field--area" name="type"></textarea>
+				</label><!--form__label-->
+			
+				<input class="form__send" type="submit" value="Отправить"><!--отправка-->
+			</form><!--form-->
+			
+			
+					<!--форма отзыва-->
+			<form class="form  form--review" action="#" method="post">
+				<button class="form__esc"></button><!--выход-->
+				<p class="form__title">Отзыв</p>
+					
+				<div class="form__rating">				
+					<input type="radio" value="1" id="r1" name="rating">
+					<input type="radio" value="2" id="r2" name="rating">
+					<input type="radio" value="3" id="r3" name="rating">
+					<input type="radio" value="4" id="r4" name="rating" checked>
+					<input type="radio" value="5" id="r5" name="rating">
+					
+					<div class="form__rating-controls">
+						<label for="r1"></label>
+						<label for="r2"></label>
+						<label for="r3"></label>
+						<label for="r4"></label>
+						<label for="r5"></label>
+					</div>
+				</div>
+						
+				<label class="form__label"><!--ввод имени-->
+					Имя<!--лейбл-->
+					<input class="form__field" type="text" name="name" required>
+				</label><!--form__label-->
+				
+				<label class="form__label"><!--отзыв-->
+					Содержание<!--лейбл-->
+					<textarea class="form__field  form__field--area" name="type"></textarea>
+				</label><!--form__label-->
+			
+				<input class="form__send" type="submit" value="Отправить"><!--отправка-->
+			</form><!--form-->
+		
+		<script src="../js/js.js"></script>
+	</body>
+</html>

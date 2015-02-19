@@ -3,499 +3,531 @@
 @import url("main.less");
 @import url("form.less");
 
-
-
-
 body {
-	background: url("../img/bg-main.png");
-	font-family: @font-family;
-	font-size: @font-main;
-	color: @color-main;
+    background: @bg-form + #111;
+    font-family: @font-family;
+    font-size: @font-main;
+    color: @color-main;
+}
+
+.layout-main {
+    box-sizing: border-box;
+    background: url("../img/bg-main.png");
+    border-left: 2px solid @color-main;
+    border-right: 2px solid @color-main;
+    box-shadow: 0 0 15px 2px @color-main;
 }
 
 .header {
-	padding-top: 8px;
-	margin-bottom: 10px;
-	
-	&__cap{
-		position: relative; //лого абсолютно спозиционировано
-		height: 139px;
-		background: url("../img/bg-header.jpg") no-repeat center center;
-		
-		&__logo {
-			position: absolute;
-			left: 50%;
-			margin-left: -60px;
-			top: 50%;
-			margin-top: -60px;
-			width: 120px;
-			height: 120px;
-			background: url("../img/logo.png") no-repeat center center;
-		}
-		
-		&__contacts {
-			float: right;
-			margin-top: 4px;
-			margin-right: 10px;
-			padding: 5px  5px 10px 8px;
-			background: #eae4da;
-			opacity: .96;
-			font-size: 17.82px;
-			
-			p {
-				margin: 0;
-				text-align: right;
-			}
-		}
-	}
+    padding-top: 8px;
+    margin-bottom: 10px;
+
+    &__cap {
+        position: relative; //лого абсолютно спозиционировано
+        height: 139px;
+        background: url("../img/bg-header.jpg") no-repeat center center;
+
+        &__logo {
+            position: absolute;
+            left: 50%;
+            margin-left: -60px;
+            top: 50%;
+            margin-top: -60px;
+            width: 120px;
+            height: 120px;
+            background: url("../img/logo.png") no-repeat center center;
+        }
+
+        &__contacts {
+            float: right;
+            margin-top: 4px;
+            margin-right: 10px;
+            padding: 5px 5px 10px 8px;
+            background: #eae4da;
+            opacity: .96;
+            font-size: 17.82px;
+
+            p {
+                margin: 0;
+                text-align: right;
+            }
+        }
+    }
 }
 
 .top-menu {
-	background: #fff;
-	
-	ul {
-		.reset-ul ();
-		font-size: 0;
-		text-align: center;
-		
-		li {
-			position: relative;
-			display: inline-block;
-			
-			//крошки
-			&:not(:first-child):before {
-					content: "";
-					position: absolute;
-					top: 50%;
-					margin-top: -2px;
-					left: -2px;
-					width: 4px;
-					height: 4px;
-					background: @color-main;
-				}
-			
-			a {
-				.reset-a ();
-				display: block;
-				padding: 10px;
-				font-size: @font-menu;
-				text-transform: uppercase;
-			}
-		}
-	}
+    background: #fff;
+
+    ul {
+        .reset-ul ();
+        font-size: 0;
+        text-align: center;
+
+        li {
+            position: relative;
+            display: inline-block;
+
+            //крошки
+            &:not(:first-child):before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                margin-top: -2px;
+                left: -2px;
+                width: 4px;
+                height: 4px;
+                background: @color-main;
+            }
+
+            a {
+                .reset-a ();
+                display: block;
+                padding: 10px;
+                font-size: @font-menu;
+                text-transform: uppercase;
+
+                &:hover { color: @color-second; }
+            }
+        }
+    }
 }
 
-.main-content {
-	margin-bottom: 55px;	
-}
+.main-content { margin-bottom: 55px; }
 
 //боковое меню
 .sidebar {
-	
-	&__title {
-		.title-general (@elem-width: 39px;);
-		margin-top: 27px;
-		margin-bottom: 30px;
-	}
-	
-	ul {
-		.reset-ul ();
-	}
-	
-	&__item {
-		margin-bottom: 31px;
-		
-		&:last-child {
-			margin-bottom: 0;
-		}
-		
-		a {
-			.reset-a ();
-			display: block;
-			text-align: center;
+    &__title {
+        .title-general (@elem-width: 39px;);
+        margin-top: 27px;
+        margin-bottom: 30px;
+    }
+
+    ul { .reset-ul (); }
+
+    &__item {
+        margin-bottom: 31px;
+
+        &:last-child { margin-bottom: 0; }
+
+        a {
+            .reset-a ();
+            display: block;
+            text-align: center;
 			
-			p {
-				margin: 0;
-				text-transform: uppercase;
-				font-weight: bold;
+			.sidebar__item--hover {
+				display: none;
 			}
-		}
-	}
+
+            p {
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            &:hover {
+				color: @color-second;
+				
+				img:first-child {
+					display: none;
+				}
+				
+				.sidebar__item--hover {
+					display: inline-block;
+				}
+			}
+        }
+    }
 }
 
-.main {
-	.info {
-		margin-top: 27px;
-		margin-bottom: 15px;
-		
-		&__title {
-			.title-general ();
-			margin-bottom: 25px;
-		}
-		
-		//обертка блока со скроллом
-		.layout-info {
-			height: 170px;
-			padding-right: 5px;
-			overflow: auto;
-		}
+.main .info {
+    margin-top: 27px;
+    margin-bottom: 15px;
 
-		&__item {
-			font-size: @font-content;
-			font-style: italic;
-			text-align: justify;
+    &__title {
+        .title-general ();
+        margin-bottom: 25px;
+    }
 
-			p {
-				margin: 0;
-			}
-		}
-	}	
+    //обертка блока со скроллом
+    .layout-info {
+        height: 170px;
+        padding-right: 5px;
+        overflow: auto;
+    }
+
+    &__text {
+        .text-regular ();
+        font-size: @font-content;
+    }
 }
 
 .feedback {
-	position: relative; //кнопка "написать" в абсолюте
-	padding: 15px 10px 20px 5px;
-	background: #f8f6f2;
-	background: rgba(255, 255, 255, .65);
-	
-	&__title {
-		.title-general (@font-feedback; @elem-width: 86px);
-		margin: 0;
-		margin-bottom: 5px;
-	}
-	
-	&__items {
-		
-	}
-	
-	&__item {
-		&__author {
-			float: left;
-			margin-bottom: 1px;
-			color: @color-second;
-		}
-		
-		&__rating {
-			float: right;
-			font-size: 0;
-			
-			&-point {
-				display: inline-block;
-				margin-left: 2px;
-				width: 14px;
-				height: 13px;
-				background: url("../img/icon-star.png") no-repeat center center;
-				
-				&--on {
-					background: url("../img/icon-star--on.png") no-repeat center center;
-				}
-			}
-		}
-		
-		//цитаты
-		&__text {
-			clear: both; //убираем наезжание от флоатов у автора и рейтинга
-			margin: 0 0 20px;
-			height: 80px;
-			overflow: hidden;
-			font-style: italic;
-		}
-	}
-	
-	//скроллинг
-	&__control--up {
-		.control--up ();
-	}
-	
-	&__control--down {
-		.control--down ();
-	}
-	
-	//кнопка - написать
-	&__write {
-		.reset-a ();
-		.btn (@font-write);
-		position: absolute;
-		right: 10px;
-		bottom: 10px;
-		width: 125px;
-		color: @color-second;
-		border: 1px solid @color-second;
-	}
+    position: relative; //кнопка "написать" в абсолюте
+    padding: 15px 10px 20px 5px;
+    background: #f8f6f2;
+    background: rgba(255, 255, 255, .65);
+
+    &__title {
+        .title-general (@font-feedback; @elem-width: 86px);
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    &__item {
+        &__author {
+            float: left;
+            margin-bottom: 1px;
+            color: @color-second;
+        }
+
+        &__rating {
+            float: right;
+            font-size: 0;
+
+            &-point {
+                display: inline-block;
+                margin-left: 2px;
+                width: 14px;
+                height: 13px;
+                background: url("../img/icon-star.png") no-repeat center center;
+
+                &--on { background: url("../img/icon-star--on.png") no-repeat center center; }
+            }
+        }
+
+        //цитаты
+        &__text {
+            clear: both; //убираем наезжание от флоатов у автора и рейтинга
+            margin: 0 0 20px;
+            height: 80px;
+            overflow: hidden;
+            font-style: italic;
+        }
+    }
+
+    //скроллинг
+    &__control--up { .control--up (); }
+
+    &__control--down { .control--down (); }
+
+    //кнопка - написать
+    &__write {
+        .reset-a ();
+        .btn (@font-write);
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        width: 125px;
+        color: @color-second;
+        border: 1px solid @color-second;
+
+        &:hover {
+            color: @color-second + #444;
+            box-shadow: 0 0 3px 0 @color-main;
+        }
+    }
 }
 
 //праая сторона
 .show-room {
-	padding-top: 25px;
-	width: 165px;
-	
-	//верхние кнопки
-	&__request,
-	&__callback {
-		.reset-a ();
-		.btn ();
-		color: @color-btn;
-		letter-spacing: -.65px;
-		word-spacing: -1px;
-	}
-	
-	&__request {		
-		margin-bottom: 8px;
-		background: @color-second;
-	}
-	
-	&__callback {
-		margin-bottom: 24px;
-		background: @color-btn_second;
-	}
-	
-	//новинки
-	&__new {
-		width: 160px;
-		margin: 0 auto 13px;
-		padding-top: 85px;
-		padding-bottom: 30px;
-		background: url("../img/img-right.jpg") no-repeat center center;
-		background-size: 100% auto;
-		
-		&-text {
-			margin-bottom: 10px;
-			padding: 15px 0 20px;
-			background: @color-main;
-			opacity: .76;
-			text-align: center;
-			font-family: @font-family--new;
-			font-size: 24px;
-			color: @color-btn;
-		}
-		
-		&-box {
-			padding: 12px 5px 10px;
-			background: rgba(255, 255, 255, .46);
-		}
-		
-		//ссылки на галерею и заказ
-		&--gallery,
-		&--order {
-			display: block;
-			color: @color-main;
-			text-transform: uppercase;
-			font-size: 15.32px;
-			letter-spacing: -.65px;
-		}
-		
-		&--gallery {
-			.reset-a ();
-			margin-bottom: 8px;
-		}
-	}
-	
-	//ссылка на галерею
-	&__gallery {
-		.reset-a ();
-		box-sizing: border-box;
-		display: block;
-		width: 160px;
-		height: 142px;
-		padding-top: 105px;
-		margin: 0 auto;
-		background: url("../img/icon-photo.png") no-repeat center 20px,
-							url("../img/img-gallery.jpg") no-repeat center center;
-		background-size: auto,
-									100% auto;
-		
-		&--text {
-			padding: 4px 0;
-			margin: 0 auto;
-			background: @color-main;
-			text-align: center;
-			text-transform: uppercase;
-			color: @color-light;
-		}
-	}
+    padding-top: 25px;
+    width: 165px;
+
+    //верхние кнопки
+    &__request, &__callback {
+        .reset-a ();
+        .btn ();
+        color: @color-btn;
+        letter-spacing: -.65px;
+        word-spacing: -1px;
+    }
+
+    &__request {
+        margin-bottom: 8px;
+        background: @color-second;
+
+        &:hover { background: @color-second + #222; }
+    }
+
+    &__callback {
+        margin-bottom: 24px;
+        background: @color-btn_second;
+
+        &:hover { background: @color-btn_second + #222; }
+    }
+
+    //новинки
+    &__new {
+        width: 160px;
+        margin: 0 auto 13px;
+        padding-top: 85px;
+        padding-bottom: 30px;
+        background: url("../img/img-right.jpg") no-repeat center center;
+        background-size: 100% auto;
+
+        &-text {
+            margin-bottom: 10px;
+            padding: 15px 0 20px;
+            background: @color-main;
+            opacity: .76;
+            text-align: center;
+            font-family: @font-family--new;
+            font-size: 24px;
+            color: @color-btn;
+        }
+
+        &-box {
+            padding: 12px 5px 10px;
+            background: rgba(255, 255, 255, .46);
+        }
+
+        //ссылки на галерею и заказ
+        &--gallery, &--order {
+            display: block;
+            color: @color-main;
+            text-transform: uppercase;
+            font-size: 15.32px;
+            letter-spacing: -.65px;
+
+            &:hover { color: @color-second; }
+        }
+
+        &--gallery {
+            .reset-a ();
+            margin-bottom: 8px;
+        }
+    }
+
+    //ссылка на галерею
+    &__gallery {
+        .reset-a ();
+        box-sizing: border-box;
+        display: block;
+        width: 160px;
+        height: 142px;
+        padding-top: 105px;
+        margin: 0 auto;
+        background: url("../img/icon-photo.png") no-repeat center 20px, url("../img/img-gallery.jpg") no-repeat center center;
+        background-size: auto, 100% auto;
+
+        &:hover>.show-room__gallery--text { background: @color-main + #333; }
+
+        &--text {
+            padding: 4px 0;
+            margin: 0 auto;
+            background: @color-main;
+            text-align: center;
+            text-transform: uppercase;
+            color: @color-light;
+        }
+    }
 }
 
 .footer {
-	position: relative;
-	background: url("../img/bg-footer.jpg") no-repeat center top;
-	color: @color-footer;
-	
-	&:before {
-		content: "";
-		position: absolute;
-		top: -7px;
-		width: 100%;
-		height: 4px;
-		background: @color-main;
-	}
-	
-	&__column {
-		box-sizing: border-box;
-		padding: 3px 30px 7px;
-		
-		&--right {
-			padding-right: 0;
-		}
-	}
-	
-	&__menu {
-		margin-bottom: 8px;
-		
-		ul {
-			.reset-ul ();
-			
-			li {
-				a {
-					.reset-a ();
-					font-size: @font-footer-menu;
-					text-transform: lowercase;
-					line-height: 20px;
-				}
-			}
-		}
-	}
-	
-	&__signature {
-		margin: 0;
-		font-size: @font-menu;
-		text-transform: uppercase;
-		line-height: 20px;
-	}
-	
-	&__request,
-	&__callback {
-		.reset-a ();
-		.btn ();
-		width: 165px;
-		margin: 0 auto;
-		background: @color-main;
-		letter-spacing: -.65px;
-		border: 1px solid @color-footer;
-	}
-	
-	&__request {
-		margin-top: 15px;
-		margin-bottom: 10px;
-	}
-	
-	&__contacts {
-		padding-top: 5px;
-		margin-bottom: 25px;
-		font-size: 17.82px;
-		text-align: right;
-		
-		p {
-			margin: 0;
-		}
-	}
-	
-	&__copyright {
-		text-align: right;
-		font-size: 11px;
-		line-height: 16px;
-		color: #cecece;
-		
-		a {
-			display: inline-block;
-			width: 93px;
-			height: 16px;
-			background: url("../img/logo-artbrother.png") no-repeat center center;
-			vertical-align: middle;
-		}
-	}
+    position: relative;
+    background: url("../img/bg-footer.jpg") no-repeat center top;
+    color: @color-footer;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        width: 100%;
+        height: 4px;
+        background: @color-main;
+    }
+
+    &__column {
+        box-sizing: border-box;
+        padding: 3px 30px 7px;
+
+        &--right { padding-right: 0; }
+    }
+
+    &__menu {
+        margin-bottom: 8px;
+
+        ul {
+            .reset-ul ();
+
+            li a {
+                .reset-a ();
+                font-size: @font-footer-menu;
+                text-transform: lowercase;
+                line-height: 20px;
+
+                &:hover { color: @color-footer - #123; }
+            }
+        }
+    }
+
+    &__signature {
+        margin: 0;
+        font-size: @font-menu;
+        text-transform: uppercase;
+        line-height: 20px;
+    }
+
+    &__request, &__callback {
+        .reset-a ();
+        .btn ();
+        width: 165px;
+        margin: 0 auto;
+        background: @color-main;
+        letter-spacing: -.65px;
+        border: 1px solid @color-footer;
+
+        &:hover { background: @color-main + #333; }
+    }
+
+    &__request {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    &__contacts {
+        padding-top: 5px;
+        margin-bottom: 25px;
+        font-size: 17.82px;
+        text-align: right;
+
+        p { margin: 0; }
+    }
+
+    &__copyright {
+        text-align: right;
+        font-size: 11px;
+        line-height: 16px;
+        color: #cecece;
+
+        a {
+            display: inline-block;
+            width: 93px;
+            height: 16px;
+            background: url("../img/logo-artbrother.png") no-repeat center center;
+            vertical-align: middle;
+        }
+    }
 }
 
 //галерея
-.main-content--gallery {
-	margin-bottom: 35px;
-}
+.main-content--gallery { margin-bottom: 35px; }
 
 .gallery {
-	padding-top: 5px;
-	
-	//скроллинги
-	&__control--up {
-		.control--up ();
-		margin-bottom: 10px;
-	}
-	
-	&__control--down {
-		.control--down ();
-		margin-top: 8px;
-	}
-	
-	//контейнер с фото
-	.gallery__box {
-		margin: 0;
+    padding-top: 5px;
 
-		//фото
-		img {
-			float: left;
-			margin: 0 5px 6px 0;
-			width: 190px;
-			height: 135px;
+    //скроллинги
+    &__control--up {
+        .control--up ();
+        margin-bottom: 10px;
+    }
 
-			//по 3 в ряду
-			&:nth-child(3n) {
-				margin-right: 0;
-			}
-		}	
-	}
+    &__control--down {
+        .control--down ();
+        margin-top: 8px;
+    }
+
+    //контейнер с фото
+    .gallery__box {
+        margin: 0;
+
+        //фото
+        img {
+            float: left;
+            margin: 0 5px 6px 0;
+            width: 190px;
+            height: 135px;
+
+            //по 3 в ряду
+            &:nth-child(3n) { margin-right: 0; }
+        }
+    }
 }
 
 //контакты
 .contacts {
-	margin: 25px auto;
-	
-	&__title {
-		.title-general (@size: 20px; @elem-width: 86px);
-		margin: 0 auto 10px;
-	}
-	
-	&__box {		
-		p {
-			margin: 0;
-			text-align: center;
-			font-style: italic;
-		}
-	}
+    margin: 25px auto;
+
+    &__title {
+        .title-general (@size: 20px; @elem-width: 86px);
+        margin: 0 auto 10px;
+    }
+
+    &__box p {
+        margin: 0;
+        text-align: center;
+        font-style: italic;
+    }
 }
 
 //отзывы
 .feedback--review {
-	background: none;
-	
-	&__write {
-		position: static;
-		margin-bottom: 20px;		
-		background: rgba(255, 255, 255, .65);
-	}
-	
-	&__item {
-		margin-bottom: 30px;
-		
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
+    background: none;
+
+    &__write {
+        position: static;
+        margin-bottom: 20px;
+        background: rgba(255, 255, 255, .65);
+    }
+
+    &__item {
+        margin-bottom: 30px;
+
+        &:last-of-type { margin-bottom: 0; }
+    }
 }
 
 //ремонт
 .renovate {
-	&__item {
-		&-title {
-			margin-bottom: 31px;
-			text-align: center;
+    &__title {
+        .title-general ();
+        margin-left: 30%;
+    }
 
-			&:last-child {
-				margin-bottom: 0;
-			}
+    &__item {
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid @color-main;
 
-			p {
-				margin: 0;
-				text-transform: uppercase;
-				font-weight: bold;
-			}
-		}
-	}
+        &:last-of-type { margin-bottom: 0; }
+
+        &-title, &-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &-title {
+            margin-bottom: 31px;
+            margin-right: 4%;
+            width: 25%;
+            text-align: center;
+
+            &:last-child { margin-bottom: 0; }
+
+            p {
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+
+        &-text {
+            box-sizing: border-box;
+            width: 70%;
+            padding-left: 5%;
+            margin-bottom: 5px;
+            .text-regular ();
+        }
+    }
+
+    &__review {
+        float: right;
+        font-size: @font-write;
+        text-transform: uppercase;
+        color: @color-second;
+
+        &:hover { color: @color-second + #333; }
+    }
 }
+
+.popup-show { display: block; }
