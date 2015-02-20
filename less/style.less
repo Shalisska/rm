@@ -149,11 +149,11 @@ body {
     }
 
     //обертка блока со скроллом
-    .layout-info {
-        height: 170px;
-        padding-right: 5px;
-        overflow: auto;
-    }
+//    .layout-info {
+//        height: 170px;
+//        padding-right: 5px;
+//        overflow: auto;
+//    }
 
     &__text {
         .text-regular ();
@@ -266,6 +266,7 @@ body {
         background-size: 100% auto;
 
         &-text {
+			display: block;
             margin-bottom: 10px;
             padding: 15px 0 20px;
             background: @color-main;
@@ -274,6 +275,7 @@ body {
             font-family: @font-family--new;
             font-size: 24px;
             color: @color-btn;
+			text-decoration: none;
         }
 
         &-box {
@@ -531,3 +533,46 @@ body {
 }
 
 .popup-show { display: block; }
+
+.info__text {
+	
+}
+
+.info--news__item {
+	&-date {
+            margin-bottom: 1px;
+            color: @color-second;
+	}
+}
+
+.price {
+	width: 100%;
+    background: #f8f6f2;
+    background: rgba(255, 255, 255, .65);
+	border: 2px solid @color-main;
+	
+	td,
+	th {
+		padding: 1%;
+		border: 1px solid (@color-main + #222);
+	}
+	
+	th {
+		border-bottom: 2px solid @color-main;
+	}
+	
+	&__title {
+		.title-general ();
+		margin-bottom: 25px;
+	}
+	
+	&__name {
+		padding-left: 15px;
+	}
+	
+	&__price{
+		.text-regular ();
+		text-align: center;
+	}
+	
+}
