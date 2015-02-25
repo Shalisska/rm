@@ -9,7 +9,7 @@
 	</head>
 	
 	<body>
-		<div class="layout-main">
+<!--		<div class="layout-main">-->
 			<header class="header">
 				<div class="header__cap  clearfix">
 					<div class="layout-center-wrapper">
@@ -183,87 +183,93 @@
 					</div><!--footer__column--right-->
 				</div><!--layout-center-wrapper-->
 			</footer><!--footer-->
-		</div><!--layout-main-->
+<!--		</div>layout-main-->
 		
-					<!--форма обратного звонка-->
-			<form class="form  form--callback" action="#" method="post">
-				<button class="form__esc"></button><!--выход-->
-				<p class="form__title">Обратный звонок</p><!--заголовок-->
-				
-				<label class="form__label"><!--ввод имени-->
-					Имя* <span class="form__label--hint">(как к вам обращаться)</span><!--лейбл-->
-					<input class="form__field" type="text" name="name" required>
-				</label><!--form__label-->
-				
-				<label class="form__label"><!--ввод телефона-->
-					Телефон* <span class="form__label--hint">(в формате 89268524596)</span><!--лейбл-->
-					<input class="form__field" type="tel" name="tel" required>
-				</label><!--form__label-->
-				
-				<input class="form__send" type="submit" value="Отправить"><!--отправка-->
-			</form><!--form-->
+            <!--форма обратного звонка-->
+			<div class="shim">
+                <form class="form  form--callback" action="#" method="post">
+			        <button class="form__esc"></button><!--выход-->
+			        <p class="form__title">Обратный звонок</p><!--заголовок-->
+			        
+			        <label class="form__label"><!--ввод имени-->
+			            Имя* <span class="form__label--hint">(как к вам обращаться)</span><!--лейбл-->
+			            <input class="form__field" type="text" name="name" required>
+			        </label><!--form__label-->
+			        
+			        <label class="form__label"><!--ввод телефона-->
+			            Телефон* <span class="form__label--hint">(в формате 89268524596)</span><!--лейбл-->
+			            <input class="form__field" type="tel" name="tel" required>
+			        </label><!--form__label-->
+			        
+			        <input class="form__send" type="submit" value="Отправить"><!--отправка-->
+			    </form><!--form-->
+			 </div>
 			
 			<!--форма заявки-->
-			<form class="form  form--order_fixed" action="#" method="post">
-				<button class="form__esc"></button><!--выход-->
-				<p class="form__title">Заявка на ремонт</p>
-						
-				<label class="form__label"><!--ввод имени-->
-					Имя* <span class="form__label--hint">(как к вам обращаться)</span><!--лейбл-->
-					<input class="form__field" type="text" name="name" required>
-				</label><!--form__label-->
-				
-				<label class="form__label"><!--ввод телефона-->
-					Телефон* <span class="form__label--hint">(в формате 89268524596)</span><!--лейбл-->
-					<input class="form__field" type="tel" name="tel" required>
-				</label><!--form__label-->
-			
-				<label class="form__label"><!--ввод почты-->
-					E-mail<!--лейбл-->
-					<input class="form__field" type="email" name="email" required>
-				</label><!--form__label-->
-			
-				<label class="form__label"><!--описание ремонта-->
-					Тип ремонта<!--лейбл-->
-					<textarea class="form__field  form__field--area" name="type"></textarea>
-				</label><!--form__label-->
-			
-				<input class="form__send" type="submit" value="Отправить"><!--отправка-->
-			</form><!--form-->
+			<div class="shim">
+                <form class="form  form--order_fixed" action="#" method="post">
+			        <button class="form__esc"></button><!--выход-->
+			        <p class="form__title">Заявка на ремонт</p>
+			                
+			        <label class="form__label"><!--ввод имени-->
+			            Имя* <span class="form__label--hint">(как к вам обращаться)</span><!--лейбл-->
+			            <input class="form__field" type="text" name="name" required>
+			        </label><!--form__label-->
+			        
+			        <label class="form__label"><!--ввод телефона-->
+			            Телефон* <span class="form__label--hint">(в формате 89268524596)</span><!--лейбл-->
+			            <input class="form__field" type="tel" name="tel" required>
+			        </label><!--form__label-->
+			    
+			        <label class="form__label"><!--ввод почты-->
+			            E-mail<!--лейбл-->
+			            <input class="form__field" type="email" name="email" required>
+			        </label><!--form__label-->
+			    
+			        <label class="form__label"><!--описание ремонта-->
+			            Тип ремонта<!--лейбл-->
+			            <textarea class="form__field  form__field--area" name="type"></textarea>
+			        </label><!--form__label-->
+			    
+			        <input class="form__send" type="submit" value="Отправить"><!--отправка-->
+			    </form><!--form-->
+			 </div>
 		
 		<!--форма отзыва-->
-			<form class="form  form--review" action="#" method="post">
-				<button class="form__esc"></button><!--выход-->
-				<p class="form__title">Отзыв</p>
-					
-				<div class="form__rating">				
-					<input type="radio" value="1" id="r1" name="rating">
-					<input type="radio" value="2" id="r2" name="rating">
-					<input type="radio" value="3" id="r3" name="rating">
-					<input type="radio" value="4" id="r4" name="rating" checked>
-					<input type="radio" value="5" id="r5" name="rating">
-					
-					<div class="form__rating-controls">
-						<label for="r1"></label>
-						<label for="r2"></label>
-						<label for="r3"></label>
-						<label for="r4"></label>
-						<label for="r5"></label>
-					</div>
-				</div>
-						
-				<label class="form__label"><!--ввод имени-->
-					Имя<!--лейбл-->
-					<input class="form__field" type="text" name="name" required>
-				</label><!--form__label-->
-				
-				<label class="form__label"><!--отзыв-->
-					Содержание<!--лейбл-->
-					<textarea class="form__field  form__field--area" name="type"></textarea>
-				</label><!--form__label-->
-			
-				<input class="form__send" type="submit" value="Отправить"><!--отправка-->
-			</form><!--form-->
+			<div class="shim">
+                <form class="form  form--review" action="#" method="post">
+			        <button class="form__esc"></button><!--выход-->
+			        <p class="form__title">Отзыв</p>
+			            
+			        <div class="form__rating">				
+			            <input type="radio" value="1" id="r1" name="rating">
+			            <input type="radio" value="2" id="r2" name="rating">
+			            <input type="radio" value="3" id="r3" name="rating">
+			            <input type="radio" value="4" id="r4" name="rating" checked>
+			            <input type="radio" value="5" id="r5" name="rating">
+			            
+			            <div class="form__rating-controls">
+			                <label for="r1"></label>
+			                <label for="r2"></label>
+			                <label for="r3"></label>
+			                <label for="r4"></label>
+			                <label for="r5"></label>
+			            </div>
+			        </div>
+			                
+			        <label class="form__label"><!--ввод имени-->
+			            Имя<!--лейбл-->
+			            <input class="form__field" type="text" name="name" required>
+			        </label><!--form__label-->
+			        
+			        <label class="form__label"><!--отзыв-->
+			            Содержание<!--лейбл-->
+			            <textarea class="form__field  form__field--area" name="type"></textarea>
+			        </label><!--form__label-->
+			    
+			        <input class="form__send" type="submit" value="Отправить"><!--отправка-->
+			    </form><!--form-->
+			 </div>
 		
 		
 		<script src="../js/js.js"></script>

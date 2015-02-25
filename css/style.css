@@ -25,7 +25,7 @@ body {
   clear: both;
 }
 .layout-center-wrapper {
-  width: 760px;
+  width: 1000px;
   margin: 0 auto;
 }
 .sidebar {
@@ -34,10 +34,10 @@ body {
 }
 .main {
   float: left;
-  width: 580px;
+  width: 820px;
 }
 .main__index-page {
-  width: 400px;
+  width: 640px;
 }
 .show-room {
   float: right;
@@ -49,7 +49,6 @@ body {
 }
 .form {
   position: fixed;
-  display: none;
   box-sizing: border-box;
   padding: 10px 23px 13px;
   background: #efe9df;
@@ -64,6 +63,7 @@ body {
   right: 3px;
   background: url("../img/icon-esc.png") no-repeat center center;
   border: none;
+  outline: none;
 }
 .form__title {
   margin: 0 0 5px;
@@ -128,6 +128,7 @@ body {
 .form--order_static {
   position: relative;
   display: block;
+  margin: 0 50px;
   border: 2px solid #382013;
   box-shadow: none;
 }
@@ -162,15 +163,36 @@ body {
   background-position: center center;
   cursor: pointer;
 }
+/* ширма (полупрозрачное затенение под модальным окном) */
+.shim {
+  /* фиксируем, растягиваем на весь доступный экран */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: none;
+  /* если в модальном окне много содержимого, показываем скроллбар */
+  overflow: auto;
+  /* однопальцевый скролл для iPad*/
+  -webkit-overflow-scrolling: touch;
+}
+/* фикс для странностей в iPad */
+.shim > * {
+  -webkit-transform: translateZ(0px);
+}
+/* декоративная часть ширмы: делаем полупрозрачной и чёрной */
+.shim {
+  background: rgba(0, 0, 0, 0.5);
+}
 body {
-  background: #fffaf0;
+  background: url("../img/bg-main.png");
   font-family: "Calibri", "Arial", sans-serif;
   font-size: 16px;
   color: #382013;
 }
 .layout-main {
   box-sizing: border-box;
-  background: url("../img/bg-main.png");
   border-left: 2px solid #382013;
   border-right: 2px solid #382013;
   box-shadow: 0 0 15px 2px #382013;
@@ -235,7 +257,7 @@ body {
   text-decoration: none;
   color: inherit;
   display: block;
-  padding: 10px;
+  padding: 10px 15px;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -518,7 +540,7 @@ body {
 }
 .footer {
   position: relative;
-  background: url("../img/bg-footer.jpg") no-repeat center top;
+  background: url("../img/bg_footer.png") center top;
   color: #f7f5f0;
 }
 .footer:before {
@@ -610,7 +632,7 @@ body {
   margin-bottom: 35px;
 }
 .gallery {
-  padding-top: 5px;
+  padding: 5px 15px 0;
 }
 .gallery__control--up {
   display: block;
@@ -643,11 +665,11 @@ body {
 }
 .gallery .gallery__box img {
   float: left;
-  margin: 0 5px 6px 0;
+  margin: 0 10px 10px 0;
   width: 190px;
   height: 135px;
 }
-.gallery .gallery__box img:nth-child(3n) {
+.gallery .gallery__box img:nth-child(4n) {
   margin-right: 0;
 }
 .contacts {
@@ -694,7 +716,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-size: 18px;
-  margin-left: 30%;
 }
 .renovate__title:before,
 .renovate__title:after {

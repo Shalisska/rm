@@ -1,12 +1,11 @@
 .form {
     position: fixed;
-    display: none;
     box-sizing: border-box;
     padding: 10px 23px 13px;
     background: @bg-form;
     border-radius: 5px;
     box-shadow: 0 0 20px 2px @color-main;
-
+        
     &__esc {
         position: absolute;
         width: 13px;
@@ -15,6 +14,7 @@
         right: 3px;
         background: url("../img/icon-esc.png") no-repeat center center;
         border: none;
+        outline: none;
     }
 
     &__title {
@@ -83,6 +83,7 @@
     &--order_static {
         position: relative;
         display: block;
+        margin: 0 50px;
         border: 2px solid @color-main;
         box-shadow: none;
     }
@@ -125,4 +126,28 @@
 			}
 		}
 	}
+}
+
+/* ширма (полупрозрачное затенение под модальным окном) */
+.shim {
+    /* фиксируем, растягиваем на весь доступный экран */
+    position: fixed;
+    bottom: 0; left: 0; top: 0; right: 0;
+    display: none;
+
+    /* если в модальном окне много содержимого, показываем скроллбар */
+    overflow: auto;
+
+    /* однопальцевый скролл для iPad*/
+    -webkit-overflow-scrolling: touch;
+}
+
+/* фикс для странностей в iPad */
+.shim > * {
+    -webkit-transform: translateZ(0px);
+}
+
+/* декоративная часть ширмы: делаем полупрозрачной и чёрной */
+.shim {
+    background: rgba(0,0,0,0.5);
 }
